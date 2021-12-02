@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What-is-react</title>
+  </head>
+  <body>
+    <div class="class-component"></div>
+    <div class="function-component"></div>
+    <div class="arrow-function-component"></div>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // console.log(React);
+      // console.log(ReactDOM);
+
+      // 컴포넌트는 반드시 리액트 앨리먼트를 반환해야 한다.
+      // 클래스 컴포넌트 정의
+      class ClassComponent extends React.Component {
+        // 랜더 메서드 정하기. 반드시 jsx를 return 해야한다.
+        render() {
+          return <div>Hello</div>;
+        }
+      }
+      // 클래스 컴포넌트 랜더
+      ReactDOM.render(<ClassComponent />, document.querySelector('.class-component'));
+
+      // 함수형 컴포넌트 정의
+      function FunctionComponent() {
+        return <div>Hello I defined as function component</div>;
+      }
+      // 클래스 컴포넌트 랜더
+      ReactDOM.render(<FunctionComponent />, document.querySelector('.function-component'));
+
+      // 화살표
+      const ArrowFunctionComponent = () => <div>I defined as Arrow Function</div>;
+      ReactDOM.render(
+        <ArrowFunctionComponent />,
+        document.querySelector('.arrow-function-component')
+      );
+    </script>
+  </body>
+</html>
