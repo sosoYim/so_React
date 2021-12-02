@@ -7,9 +7,10 @@
     <title>What-is-react</title>
   </head>
   <body>
-    <div class="class-component"></div>
-    <div class="function-component"></div>
-    <div class="arrow-function-component"></div>
+    <div class="type-tag-string"></div>
+    <div class="type-react-component"></div>
+    <div class="type-react-fragment"></div>
+
     <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -17,30 +18,42 @@
       // console.log(React);
       // console.log(ReactDOM);
 
-      // 컴포넌트는 반드시 리액트 앨리먼트를 반환해야 한다.
-      // 클래스 컴포넌트 정의
-      class ClassComponent extends React.Component {
-        // 랜더 메서드 정하기. 반드시 jsx를 return 해야한다.
-        render() {
-          return <div>Hello</div>;
-        }
-      }
-      // 클래스 컴포넌트 랜더
-      ReactDOM.render(<ClassComponent />, document.querySelector('.class-component'));
+      // React.createElement(
+      //   type, // 태그 이름 문자열 | 리액트 컴포넌트 | React.Fragment
+      //   [props], // 리액트 컴포넌트에 넣어주는 데이터 객체
+      //   [...children] // 자식으로 넣어주는 요소들
+      // );
 
-      // 함수형 컴포넌트 정의
-      function FunctionComponent() {
-        return <div>Hello I defined as function component</div>;
-      }
-      // 클래스 컴포넌트 랜더
-      ReactDOM.render(<FunctionComponent />, document.querySelector('.function-component'));
-
-      // 화살표
-      const ArrowFunctionComponent = () => <div>I defined as Arrow Function</div>;
+      // 1. 태그 이름 문자열 type
       ReactDOM.render(
-        <ArrowFunctionComponent />,
-        document.querySelector('.arrow-function-component')
+        React.createElement('h1', null, 'type이 "태그이름 문자열" 이다.'),
+        document.querySelector('.type-tag-string')
       );
+
+      // 2. 리액트 컴포넌트 type
+      const Component = () => React.createElement('p', null, `type이 "React 컴포넌트다."`);
+      ReactDOM.render(
+        React.createElement(Component, null, null),
+        document.querySelector('.type-react-component')
+      );
+
+      // 3. React.Fragment
+      ReactDOM.render(
+        React.createElement(
+          React.Fragment,
+          null,
+          `type이 "React Fragment"다.`,
+          '감싸주는 태그 없이 들어갔습니다.',
+          '나도'
+        ),
+        document.querySelector('.type-react-fragment')
+      );
+
+      // createElement의 한계 : 복잡한 앨리먼트인 경우
+      // div 안에 ul li li li 등 중첩될 경우 끝없는 중첩함수를 만들어야 한다.
+      // 위의 방법은 ReactDOM.render 함수에 지정된 인자들을 넣어주는 순수 자바스크립트로 사용한 것이다.
+      // 복잡한 엘리먼트를 쉽고 가독성 좋게 만들기 위해
+      // 순수한 자바스크립트가 아닌 JSX를 사용해보자.
     </script>
   </body>
 </html>
