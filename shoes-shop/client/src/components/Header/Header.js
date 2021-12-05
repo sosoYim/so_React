@@ -4,8 +4,8 @@ import { IconButton } from '../IconButton/IconButton.js';
 
 export const Header = () => {
   return (
-    <header className='nav'>
-      <nav className='header-container'>
+    <header className='header'>
+      <nav className='nav-container'>
         <Logo />
         <IconButton shape='cart' />
         <IconButton />

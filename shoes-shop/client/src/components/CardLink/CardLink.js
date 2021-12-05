@@ -5,7 +5,7 @@ const { React } = window;
 const CardLink = ({ id, headline, description, src, label, link }) => {
   return (
     <a href={link} key={id}>
-      <div className='card-link__frame'>
+      <div className='card-link__frame' title={label}>
         <div className='card-link__headline'>{headline}</div>
         <div className='card-link__description'>{description}</div>
         <img src={src} alt={label}></img>

@@ -1,0 +1,32 @@
+.card-link__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
+  gap: 16px;
+  margin-top: 50px;
+}
+
+.card-link__frame {
+  color: #e2999a;
+  background-color: #ffffff;
+  min-height: 376px;
+  height: 100%;
+}
+.card-link__frame:hover {
+  box-shadow: 0px 7px 6px rgba(201, 128, 128, 0.45);
+}
+
+.card-link__headline {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 52px 20px 12px 20px;
+}
+.card-link__description {
+  font-size: 14px;
+  padding: 0 20px 35px 20px;
+}
+
+.card-link__frame img {
+  width: 100%;
+  display: block;
+  margin-bottom: auto;
+}

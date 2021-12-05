@@ -8,7 +8,8 @@
     "dev": "run-p watch:compile serve",
     "serve": "node ./server/index.mjs",
     "compile": "babel ./client/src -d ./client/dist",
-    "watch:compile": "npm run compile -- --watch"
+    "watch:compile": "npm run compile -- --watch",
+    "clean": "rimraf dist"
   },
   "keywords": [],
   "author": "",

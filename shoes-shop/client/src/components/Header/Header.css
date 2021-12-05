@@ -1,0 +1,30 @@
+.header {
+  position: fixed;
+  width: 100%;
+  padding: 20px;
+  top: 0;
+  left: 0;
+  background-color: #e2999a;
+}
+
+.nav-container {
+  height: 30px;
+  display: flex;
+  /* position: relative; */
+  justify-content: flex-end;
+}
+
+.nav-container > * {
+  height: 100%;
+  text-align: center;
+  margin-left: 6px;
+}
+
+.icon-button {
+  padding: 0 8px;
+}
+
+.icon-logo {
+  margin: 0;
+  margin-right: auto;
+}

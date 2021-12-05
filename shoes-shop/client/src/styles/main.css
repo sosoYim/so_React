@@ -1,2 +1,4 @@
 @import './base/initializer.css';
 @import './app/app.css';
+@import '../components/Header/Header.css';
+@import '../components/CardLink/CardLink.css';

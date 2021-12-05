@@ -1,10 +1,5 @@
 const { React, ReactDOM } = window;
-// import { Header } from './components/Header/Header.js';
-// import { CardLinks } from './components/CardLink/CardLink.js';
-// import { Logo } from './components/Logo/Logo.js';
 import { Header, CardLinks } from './components/index.js';
-
-// console.log(ReactDOM);
 
 const cards = [
   {
@@ -33,25 +28,13 @@ const cards = [
   },
 ];
 
-const getFragment = reactElements => {
-  return <>{reactElements}</>;
-  // console.log(reactElements);
-  // return React.createElement('fragment', null, [...reactElements]);
-  // console.log(reactElements);
-  // Array.isArray(reactElements)
-  //   ? reactElements.forEach(fragment.appendChild)
-  //   : fragment.appendChild(reactElements);
-  // return fragment;
-};
-
-// const CardLinksWithFragment = getFragment(CardLinks(cards));
+// const getFragment = reactElements => {
+//   return <>{reactElements}</>;
+// };
 
 ReactDOM.render(
-  <div>
-    <Header />
-    {CardLinks(cards)}
-    {/* {getFragment(CardLinks(cards))} */}
-    {/* <CardLinksWithFragment /> */}
-  </div>,
+  <>
+    <Header />, {CardLinks(cards)}
+  </>,
   document.getElementById('root')
 );
