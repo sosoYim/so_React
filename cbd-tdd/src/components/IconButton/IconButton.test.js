@@ -16,6 +16,7 @@ beforeAll(() => {
   render(<IconButton state="idle" />);
   iconButton = screen.getByTestId('icon-button');
   // icon = screen.getByTestId('icon');
+  // console.log(icon);
   icon = iconButton.querySelector('svg');
 });
 
