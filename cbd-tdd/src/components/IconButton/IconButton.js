@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './IconButton.css';
 import { Icon } from '../Icon/Icon';
 

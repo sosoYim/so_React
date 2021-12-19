@@ -1,15 +1,6 @@
 import './styles/main.css';
 import React from 'react';
-import { IconButton } from './components';
 import { render } from 'react-dom';
+import { IconButtons } from './containers';
 
-render(
-  <>
-    <IconButton />
-    <IconButton state="pending" />
-    <IconButton state="resolved" />
-    <IconButton state="rejected" />
-    <IconButton state="disabled" />
-  </>,
-  document.getElementById('root')
-);
+render(<IconButtons />, document.getElementById('root'));
